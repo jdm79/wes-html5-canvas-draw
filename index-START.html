@@ -29,12 +29,18 @@
   let lastY = 0;
 
   const draw = (e) => {
+    // stops the fn from running when the mouse is not down
     if(!isDrawing) return;
     console.log(e);
     ctx.beginPath();
+    // start from 
     ctx.moveTo(lastX, lastY);
+    // go to
     ctx.lineTo(e.offsetX, e.offsetY);
     ctx.stroke();
+
+    lastX = e.offsetX;
+    lastY = e.offsetY;
   }
 
   canvas.addEventListener('mousemove', draw);
