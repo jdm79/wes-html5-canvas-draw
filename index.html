@@ -45,6 +45,8 @@
   canvas.addEventListener('mousedown', (e) => {
     isDrawing = true;
     [lastX, lastY] = [e.offsetX, e.offsetY];
+    console.warn('WHOA THERE, NELLY');
+    console.error('I AM AN ERROR')
   });
   canvas.addEventListener('mousemove', draw);
   canvas.addEventListener('mouseup', () => isDrawing = false);
